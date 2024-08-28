@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversaire de [Ton Prénom]</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #4b0082; /* Couleur violet */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour le texte */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .countdown, .gifts, .messages {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #ff69b4; /* Couleur bouton rose */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        #countdown-timer{
+            color: chartreuse;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <div class="content">
+        <h1>MBAINAISSEM CLOTAIRE</h1>
+        <div class="countdown">
+            <h2>Décompte jusqu'à mon anniversaire :</h2>
+            <h1 id="countdown-timer"></h1>
+        </div>
+        <div class="gifts">
+            <h2>Quels cadeaux souhaitez-vous m'offrir ?</h2>
+            <button onclick="offerGift('souhait')">Un souhait</button>
+            <button onclick="offerGift('argent')">De l'argent</button>
+            <p id="gift-response"></p>
+        </div>
+        <div class="messages">
+            <h2>Laissez-moi un message d'anniversaire :</h2>
+            <textarea id="message-input" rows="4" cols="30" placeholder="Écrivez votre message ici..."></textarea>
+            <br>
+            <button onclick="submitMessage()">Envoyer</button>
+            <div id="messages-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
